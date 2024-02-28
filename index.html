@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,54 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-<body>
-    <main>
-        <section id="phone-container" class="container mx-auto">
 
+<body>
+    <main class="container mx-auto">
+        <section class="container mx-auto text-center">
+            <div class="mx-auto p-5">
+                <input id="input-field" type="text" placeholder="Type here"
+                    class="input input-bordered w-full max-w-xs" />
+                <button id="search-btn" class="btn input-accent">Search</button>
+            </div>
+        </section>
+        <section id="loading-spinner" class="hidden">
+            <div class="text-center h-72 flex justify-center items-center ">
+                <span class="loading loading-spinner loading-lg"></span>
+            </div>
+        </section>
+        <section id="phone-container"
+            class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 justify-center items-center">
+
+        </section>
+        <div id="showAllBtn" class="text-center p-4 hidden">
+            <button class="btn btn-accent text-center">Show All</button>
+        </div>
+
+        <section>
+            <!-- You can open the modal using ID.showModal() method -->
+
+            <dialog id="details_modal" class="modal">
+                <div class="modal-box space-y-2">
+
+                    <div class="text-center flex justify-center items-center p-5">
+                        <img class="h-[100%]" id="phoneImage" src="" alt="">
+                    </div>
+                    <h2 id="phoneName" class="font-bold text-3xl text-center"></h2>
+                    <h4 class="font-bold"><span></span></h4>
+                    <h4 id="Chipset" class="font-bold"></h4>
+                    <h4 id="Memory" class="font-bold"></h4>
+                    <h4 id="Slug" class="font-bold"></h4>
+                    <h4 id="storage" class="font-bold"></h4>
+                    <h4 id="Release-data" class="font-bold"></h4>
+                    <form method="dialog">
+                        <button class="btn btn btn-primary absolute right-2 ">close</button>
+                    </form>
+                </div>
+
+            </dialog>
         </section>
     </main>
     <script src="script.js"></script>
 </body>
+
 </html>
