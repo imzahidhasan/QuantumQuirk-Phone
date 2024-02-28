@@ -61,7 +61,7 @@ async function detailsBtn(id) {
   const phoneData = await getData.json();
   const phoneInfo = phoneData.data;
   console.log(phoneInfo);
-  getById("phoneImage").src=phoneInfo.image;
+  getById("phoneImage").src = phoneInfo.image;
   getById("phoneName").innerText = phoneInfo?.name;
   getById("Display-Size").innerText = `Display Size:  ${
     phoneInfo?.mainFeatures?.displaySize || "Not Available"
@@ -79,7 +79,7 @@ async function detailsBtn(id) {
   getById("storage").innerText = `Chip set:  ${
     phoneInfo?.mainFeatures?.chipSet || "Not Available"
   }`;
-  getById(
-    "Release-data"
-  ).innerText = `Release Date:  ${phoneInfo?.mainFeatures?.releaseDate || "Not Available"}`;
+  getById("Release-data").innerText = `Release Date:  ${
+    phoneInfo?.mainFeatures?.releaseDate || "Not Available"
+  }`;
 }
